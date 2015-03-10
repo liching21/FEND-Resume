@@ -29,21 +29,14 @@ var formattedLocation = HTMLlocation.replace("%data%",bio.contacts.location);
 var formattedBioPic = HTMLbioPic.replace("%data%",bio.pictureURL);
 var formattedWelcomeMessage = HTMLwelcomeMsg.replace("%data%",bio.welcomeMessage);
 
-var skillsStart = HTMLskillsStart;
-var formattedSkills = HTMLskills.replace("%data%", bio.skills);
-
 $("#header").prepend(formattedRole);
 $("#header").prepend(formattedName);
-$("#header").append(formattedEmail);
-$("#header").append(formattedMobile);
-$("#header").append(formattedGithub);
-$("#header").append(formattedLocation);
+$("#topContacts").append(formattedEmail);
+$("#topContacts").append(formattedMobile);
+$("#topContacts").append(formattedGithub);
+$("#topContacts").append(formattedLocation);
 $("#header").append(formattedBioPic);
 $("#header").append(formattedWelcomeMessage);
-
-/** skills **/
-$("#header").append(skillsStart);
-$("#header").append(formattedSkills);
 
 /** Creating work object with dot notation **/
 /**
@@ -136,6 +129,54 @@ var education = {
 	  	}	
 	  ] 
 }
+
+/** write an if statement to check if there are skills in the bio object **/
+
+if(bio.skills.length > 0){
+	/** skills **/
+	$("#header").append(HTMLskillsStart);
+
+	var formattedSkills = HTMLskills.replace("%data%", bio.skills[0]);
+	$("#skills").append(formattedSkills);
+
+	var formattedSkills = HTMLskills.replace("%data%", bio.skills[1]);
+	$("#skills").append(formattedSkills);
+
+	var formattedSkills = HTMLskills.replace("%data%", bio.skills[2]);
+	$("#skills").append(formattedSkills);
+
+	var formattedSkills = HTMLskills.replace("%data%", bio.skills[3]);
+	$("#skills").append(formattedSkills);
+}
+
+/** write a for in loop that iterates over all jobs in the work obj **/
+/*	format each jobs employer	and job title													 */
+var formattedEmployer;
+var formattedTitle;
+var combineEmployerTitle;
+
+for (job in work.jobs){
+
+	formattedEmployer = HTMLworkEmployer.replace("%data%",work.jobs[job].employer);
+	formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+	formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].location);
+	formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].dates);
+	formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+	
+	combineEmployerTitle = formattedEmployer + formattedTitle;
+
+	$("#workExperience").append(HTMLworkStart);
+	$("#workExperience:last").append(combineEmployerTitle);
+	$("#workExperience:last").append(formattedDates);
+	$("#workExperience:last").append(formattedLocation);
+	$("#workExperience:last").append(formattedDescription);
+
+	console.log(work.jobs[job].employer, work.jobs[job].title);
+}
+
+
+
+
 
 
 
