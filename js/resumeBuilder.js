@@ -198,10 +198,11 @@ var displayWork = function(){
 		combineEmployerTitle = formattedEmployer + formattedTitle;
 
 		$("#workExperience").append(HTMLworkStart);
-		$("#workExperience:last").append(combineEmployerTitle);
-		$("#workExperience:last").append(formattedDates);
-		$("#workExperience:last").append(formattedLocation);
-		$("#workExperience:last").append(formattedDescription);
+
+		$(".work-entry:last").append(combineEmployerTitle);
+		$(".work-entry:last").append(formattedDates);
+		$(".work-entry:last").append(formattedLocation);
+		$(".work-entry:last").append(formattedDescription);
 
 		console.log(work.jobs[job].employer, work.jobs[job].title);
 	}
