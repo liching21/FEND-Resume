@@ -35,6 +35,14 @@ $("#topContacts").append(formattedEmail);
 $("#topContacts").append(formattedMobile);
 $("#topContacts").append(formattedGithub);
 $("#topContacts").append(formattedLocation);
+
+$("#footerContacts").append(formattedEmail);
+$("#footerContacts").append(formattedMobile);
+$("#footerContacts").append(formattedGithub);
+$("#footerContacts").append(formattedLocation);
+
+
+
 $("#header").append(formattedBioPic);
 $("#header").append(formattedWelcomeMessage);
 
@@ -171,7 +179,7 @@ education.display = function(){
 
 		var combinedSchoolNameDegree = formattedschoolName + formattedschoolDegree;
 		var formattedschoolDates = HTMLschoolDates.replace("%data%",education.schools[edu].dates);
-		var formattedschoolLocation = HTMLschoolLocation.replace("%data%",education.schools[edu].Location);
+		var formattedschoolLocation = HTMLschoolLocation.replace("%data%",education.schools[edu].location);
 
 		$(".education-entry:last").append(combinedSchoolNameDegree);
 		$(".education-entry:last").append(formattedschoolDates);
