@@ -152,10 +152,64 @@ var education = {
 	  	{
 	  		"title" : "Front End Web Development",
 		  	"school" : "Udacity",
-		  	"dates" : "Feb 2015 - Ongoing"
+		  	"dates" : "Feb 2015 - Ongoing",
+		  	"url" : "https://www.udacity.com/course/nd001"
 	  	}
 	  ]
 }
+
+/** Add the disaplay methd for education **/
+education.display = function(){
+
+	/** loop through each university and add info to the page */
+	for (var edu in education.schools){
+
+		$("#education").append(HTMLschoolStart);
+
+		var formattedschoolName = HTMLschoolName.replace("%data%",education.schools[edu].name);
+		var formattedschoolDegree = HTMLschoolDegree.replace("%data%",education.schools[edu].degree);
+
+		var combinedSchoolNameDegree = formattedschoolName + formattedschoolDegree;
+		var formattedschoolDates = HTMLschoolDates.replace("%data%",education.schools[edu].dates);
+		var formattedschoolLocation = HTMLschoolLocation.replace("%data%",education.schools[edu].Location);
+
+		$(".education-entry:last").append(combinedSchoolNameDegree);
+		$(".education-entry:last").append(formattedschoolDates);
+		$(".education-entry:last").append(formattedschoolLocation);
+
+		//TODO: Add a link to usyd URL
+		//$(".education-entry a").attr("href",education.schools[edu].url;
+
+		for (var major in education.schools[edu].majors){
+
+			var formattedschoolMajor = HTMLschoolMajor.replace("%data%",education.schools[edu].majors[major]);
+
+			$(".education-entry:last").append(formattedschoolMajor);
+		}
+	}
+
+	$("#education").append(HTMLonlineClasses);
+
+	/** loop through each university and add info to the page*/
+	for(var oc in education.onlineCourses){
+
+		$("#education").append(HTMLschoolStart);
+
+		var formattedOnlineTitle = HTMLonlineTitle.replace("%data%",education.onlineCourses[oc].title);
+		var formattedOnlineSchool = HTMLonlineSchool.replace("%data%",education.onlineCourses[oc].school);
+		var combineOnlineTitleschool = formattedOnlineTitle + formattedOnlineSchool;
+
+		var formattedOnlineDates = HTMLonlineDates.replace("%data%",education.onlineCourses[oc].dates);
+		var formattedOnlineURL = HTMLonlineURL.replace("%data%",education.onlineCourses[oc].url);
+
+		$(".education-entry:last").append(combineOnlineTitleschool);
+		$(".education-entry:last").append(formattedOnlineDates);
+		$(".education-entry:last").append(formattedOnlineURL);
+
+	}
+}
+
+education.display();
 
 /** write an if statement to check if there are skills in the bio object **/
 
