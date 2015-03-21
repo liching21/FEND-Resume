@@ -14,7 +14,7 @@ var bio = {
 		"location" : "Sydney, Australia"
 	},
 
-	"pictureURL" : "images/may-main.jpg",
+	"pictureURL" : "images/melb-cup-me.jpg",
 	"welcomeMessage" : "Hello everyone, welcome to my portfolio page!",
 	"skills" : ["HTML" , " JS" , " CSS" , " Responsive"]
 }
