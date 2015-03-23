@@ -11,6 +11,7 @@
 .education-entry, .work-entry, .project-entry {
   padding-left: 5%;
   padding-right: 5%;
+  padding-bottom: 1%;
 }
 
 h1 {
@@ -47,6 +48,7 @@ h2, h3, h4, h5 {
   padding:10px;
   padding-left: 5%;
   padding-right: 5%;
+  font-weight: 300;
 }
 
 
@@ -71,13 +73,15 @@ p {
   font-size: 14px;
   color: #333333;
   line-height: 21px;
+  font-weight: 300;
 }
 
 a {
-  color: #1199C3;
+  color: #F5AE23;
   text-decoration: none;
-  margin-top: 10px;
+  margin-top: 12px;
   display: block;
+  font-weight: 300;
 }
 
 .welcome-message {
@@ -157,7 +161,10 @@ img {
 }
 
 #projects img{
-  max-width: 200px;
+  max-width: 250px;
+  padding: 0px;
+  margin: 12px 12px 0px 0px;
+  border-radius: 12px;
 }
 
 /* Bar chart stuff */
@@ -229,4 +236,13 @@ span {
 
 #skills li.flex-item{
   width: 100%;
+}
+
+#projects{
+  background-image: url("../images/sunset.jpeg");
+  background-size: 100%;
+}
+
+#projects p{
+    color: #ccc;
 }

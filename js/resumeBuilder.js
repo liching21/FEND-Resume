@@ -9,7 +9,7 @@ var bio = {
 	"role" : "Front End Web Developer",
 	"contacts" : {
 		"email" : "liching.yew@gmail.com",
-		"mobile" : "0488 888 888",
+		"mobile" : "0430 488 705",
 		"github" : "https://github.com/liching21",
 		"location" : "Sydney, Australia"
 	},
@@ -64,14 +64,14 @@ var work = {
 			"title" : "Service Desk Analyst",
 			"location" : "Sydney, Australia",
 			"dates" : "june 2014 - current",
-			"description" : "Support Little Hotelier by phone and written support"
+			"description" : "My role primarily involves in direct verbal and written communication with customers who require assistance with using Little Hotelier. Additionally I coordinate with the Level 2 Support team to resolve higher level enquiries and keep the customer informed of the progress. I ensure that cases are dealt with in a timely manner with efficiency and accuracy untimately providing a pleasant experience to our customers."
 		},
 		{
 			"employer" : "Sydney Eemralds Synchro Club",
 			"title" : "Coach",
 			"location" : "Sydney, Australia",
 			"dates" : "2009 - 2014",
-			"description" : "Planning sessions and coaching swimmers for competition"
+			"description" : "My role involves coaching athletes in synchronised swimming by planning the sessions, instructing relevant skills, analysing their performances and providing feedback for improvement."
 		}
 	]
 }
@@ -83,19 +83,22 @@ var projects = {
 		{
 			"title" : "Events of y22",
 			"dates" : "February 2015",
-			"description" : "A web page reflecting my life event during th year I was 22",
+			"description" : "Applying the front end web design and development techniques that I have leant so far to create and aesthetically pleasing webpage highlighting the events that happened when I was 22",
 			"images" : [
-				"images/22img1.png",
-				"images/22img2.png"
+				"images/22img1.jpg",
+				"images/22img2.jpg",
+				"images/22img3.jpg"
 			]
 		},
 		{
 			"title" : "Sydney Emeralds Club Website",
 			"dates" : "February 2014 - January 2015",
-			"description" : "Website for the Sydney Emeralds Synchro Club",
+			"description" : "In an attempt to improve the current website, I have created an unofficial website for the Sydney Emeralds Synchro Club.",
 			"images" : [
-				"images/combo-states.jpg",
-				"images/competitive-lift.jpg"
+				"images/SESCimg1.jpg",
+				"images/SESCimg2.jpg",
+				"images/SESCimg3.jpg",
+				"images/SESCimg4.jpg"
 			]
 		}
 	]
