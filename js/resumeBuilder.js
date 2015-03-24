@@ -243,10 +243,6 @@ if(bio.skills.length > 0){
 	$("#skills").append(formattedSkills);
 }
 
-/** write a for in loop that iterates over all jobs in the work obj **/
-/*	format each jobs employer	and job title													 */
-
-
 /** Lesson 2 internationalise the name */
 $("#main").append(internationalizeButton);
 
@@ -260,28 +256,3 @@ function inName(name) {
 
 /** show google map */
 $("#mapDiv").append(googleMap);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
