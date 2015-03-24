@@ -17,50 +17,36 @@ var bio = {
 
 	"pictureURL": "images/melb-cup-me.jpg",
 	"welcomeMessage": "Hello everyone, welcome to my portfolio page!",
-	"skills": ["HTML" , "JS" , "CSS" , "Creating responsive webpages"]
-}
+	"skills": ["HTML" , "JS" , "CSS" , "Creating responsive webpages"],
+	display: function(){
+		var formattedName = HTMLheaderName.replace("%data%",bio.name);
+		var formattedRole = HTMLheaderRole.replace("%data%",bio.role);
+		var formattedMobile = HTMLmobile.replace("%data%",bio.contacts.mobile);
+		var formattedEmail = HTMLemail.replace("%data%",bio.contacts.email);
+		var formattedGithub = HTMLgithub.replace("%data%",bio.contacts.github);
+		var formattedLocation = HTMLlocation.replace("%data%",bio.contacts.location);
 
-/** add the display method for Bio */
-bio.display = function(){
+		var formattedBioPic = HTMLbioPic.replace("%data%",bio.pictureURL);
+		var formattedWelcomeMessage = HTMLwelcomeMsg.replace("%data%",bio.welcomeMessage);
 
-	var formattedName = HTMLheaderName.replace("%data%",bio.name);
-	var formattedRole = HTMLheaderRole.replace("%data%",bio.role);
-	var formattedMobile = HTMLmobile.replace("%data%",bio.contacts.mobile);
-	var formattedEmail = HTMLemail.replace("%data%",bio.contacts.email);
-	var formattedGithub = HTMLgithub.replace("%data%",bio.contacts.github);
-	var formattedLocation = HTMLlocation.replace("%data%",bio.contacts.location);
+		$("#header").prepend(formattedRole);
+		$("#header").prepend(formattedName);
+		$("#topContacts").append(formattedEmail);
+		$("#topContacts").append(formattedMobile);
+		$("#topContacts").append(formattedGithub);
+		$("#topContacts").append(formattedLocation);
 
-	var formattedBioPic = HTMLbioPic.replace("%data%",bio.pictureURL);
-	var formattedWelcomeMessage = HTMLwelcomeMsg.replace("%data%",bio.welcomeMessage);
+		$("#footerContacts").append(formattedEmail);
+		$("#footerContacts").append(formattedMobile);
+		$("#footerContacts").append(formattedGithub);
+		$("#footerContacts").append(formattedLocation);
 
-	$("#header").prepend(formattedRole);
-	$("#header").prepend(formattedName);
-	$("#topContacts").append(formattedEmail);
-	$("#topContacts").append(formattedMobile);
-	$("#topContacts").append(formattedGithub);
-	$("#topContacts").append(formattedLocation);
-
-	$("#footerContacts").append(formattedEmail);
-	$("#footerContacts").append(formattedMobile);
-	$("#footerContacts").append(formattedGithub);
-	$("#footerContacts").append(formattedLocation);
-
-	$("#header").append(formattedBioPic);
-	$("#header").append(formattedWelcomeMessage);
+		$("#header").append(formattedBioPic);
+		$("#header").append(formattedWelcomeMessage);
+	}
 }
 
 bio.display();
-
-
-/** Creating work object with dot notation **/
-/**
-	var work = {};
-
-	work.position = "Service Desk Analyst";
-	work.employer = "SiteMinder";
-	work.yearsWorked = "1 year";
-	work.cityOfBusiness = "Sydney, Australia";
-*/
 
 /** Updating the work object **/
 var work = {
@@ -79,8 +65,33 @@ var work = {
 			"dates": "2009 - 2014",
 			"description": "My role involves coaching athletes in synchronised swimming by planning the sessions, instructing relevant skills, analysing their performances and providing feedback for improvement."
 		}
-	]
+	],
+	display: function(){
+		var formattedEmployer;
+		var formattedTitle;
+		var combineEmployerTitle;
+
+		for (job in work.jobs){
+
+			formattedEmployer = HTMLworkEmployer.replace("%data%",work.jobs[job].employer);
+			formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+			formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].location);
+			formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].dates);
+			formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+
+			combineEmployerTitle = formattedEmployer + formattedTitle;
+
+			$("#workExperience").append(HTMLworkStart);
+
+			$(".work-entry:last").append(combineEmployerTitle);
+			$(".work-entry:last").append(formattedDates);
+			$(".work-entry:last").append(formattedLocation);
+			$(".work-entry:last").append(formattedDescription);
+		}
+	}
 }
+
+work.display();
 
 /** Creating the projects object **/
 
@@ -107,29 +118,25 @@ var projects = {
 				"images/SESCimg4.jpg"
 			]
 		}
-	]
-}
+	],
+	display: function(){
+		/** loop through each project and add info */
+		for (var project in projects.projects){
 
-/** added the display method for the projects */
+			$("#projects").append(HTMLprojectStart);
 
-projects.display = function(){
+			var formattedProjectTitle = HTMLprojectTitle.replace("%data%",projects.projects[project].title);
+			var formattedProjectDates = HTMLprojectDates.replace("%data%",projects.projects[project].dates);
+			var formattedProjectDescription = HTMLprojectDescription.replace("%data%",projects.projects[project].description);
 
-	/** loop through each project and add info */
-	for (var project in projects.projects){
+			$(".project-entry:last").append(formattedProjectTitle);
+			$(".project-entry:last").append(formattedProjectDates);
+			$(".project-entry:last").append(formattedProjectDescription);
 
-		$("#projects").append(HTMLprojectStart);
-
-		var formattedProjectTitle = HTMLprojectTitle.replace("%data%",projects.projects[project].title);
-		var formattedProjectDates = HTMLprojectDates.replace("%data%",projects.projects[project].dates);
-		var formattedProjectDescription = HTMLprojectDescription.replace("%data%",projects.projects[project].description);
-
-		$(".project-entry:last").append(formattedProjectTitle);
-		$(".project-entry:last").append(formattedProjectDates);
-		$(".project-entry:last").append(formattedProjectDescription);
-
-		for (var img in projects.projects[project].images){
-			var formattedProjectImage = HTMLprojectImage.replace("%data%",projects.projects[project].images[img]);
-			$(".project-entry:last").append(formattedProjectImage);
+			for (var img in projects.projects[project].images){
+				var formattedProjectImage = HTMLprojectImage.replace("%data%",projects.projects[project].images[img]);
+				$(".project-entry:last").append(formattedProjectImage);
+			}
 		}
 	}
 }
@@ -157,58 +164,55 @@ var education = {
 		  	"dates": "Feb 2015 - Ongoing",
 		  	"url": "https://www.udacity.com/course/nd001"
 	  	}
-	  ]
-}
+	  ],
+	  display: function(){
+	  	/** loop through each university and add info to the page */
+			for (var edu in education.schools){
 
-/** Add the disaplay methd for education **/
-education.display = function(){
+				$("#education").append(HTMLschoolStart);
 
-	/** loop through each university and add info to the page */
-	for (var edu in education.schools){
+				var formattedschoolName = HTMLschoolName.replace("%data%",education.schools[edu].name);
+				var formattedschoolDegree = HTMLschoolDegree.replace("%data%",education.schools[edu].degree);
 
-		$("#education").append(HTMLschoolStart);
+				var combinedSchoolNameDegree = formattedschoolName + formattedschoolDegree;
+				var formattedschoolDates = HTMLschoolDates.replace("%data%",education.schools[edu].dates);
+				var formattedschoolLocation = HTMLschoolLocation.replace("%data%",education.schools[edu].location);
 
-		var formattedschoolName = HTMLschoolName.replace("%data%",education.schools[edu].name);
-		var formattedschoolDegree = HTMLschoolDegree.replace("%data%",education.schools[edu].degree);
+				$(".education-entry:last").append(combinedSchoolNameDegree);
+				$(".education-entry:last").append(formattedschoolDates);
+				$(".education-entry:last").append(formattedschoolLocation);
 
-		var combinedSchoolNameDegree = formattedschoolName + formattedschoolDegree;
-		var formattedschoolDates = HTMLschoolDates.replace("%data%",education.schools[edu].dates);
-		var formattedschoolLocation = HTMLschoolLocation.replace("%data%",education.schools[edu].location);
+				//TODO: Add a link to usyd URL
+				//$(".education-entry a").attr("href",education.schools[edu].url;
 
-		$(".education-entry:last").append(combinedSchoolNameDegree);
-		$(".education-entry:last").append(formattedschoolDates);
-		$(".education-entry:last").append(formattedschoolLocation);
+				for (var major in education.schools[edu].majors){
 
-		//TODO: Add a link to usyd URL
-		//$(".education-entry a").attr("href",education.schools[edu].url;
+					var formattedschoolMajor = HTMLschoolMajor.replace("%data%",education.schools[edu].majors[major]);
 
-		for (var major in education.schools[edu].majors){
+					$(".education-entry:last").append(formattedschoolMajor);
+				}
+			}
 
-			var formattedschoolMajor = HTMLschoolMajor.replace("%data%",education.schools[edu].majors[major]);
+			$("#education").append(HTMLonlineClasses);
 
-			$(".education-entry:last").append(formattedschoolMajor);
-		}
-	}
+			/** loop through each university and add info to the page*/
+			for(var oc in education.onlineCourses){
 
-	$("#education").append(HTMLonlineClasses);
+				$("#education").append(HTMLschoolStart);
 
-	/** loop through each university and add info to the page*/
-	for(var oc in education.onlineCourses){
+				var formattedOnlineTitle = HTMLonlineTitle.replace("%data%",education.onlineCourses[oc].title);
+				var formattedOnlineSchool = HTMLonlineSchool.replace("%data%",education.onlineCourses[oc].school);
+				var combineOnlineTitleschool = formattedOnlineTitle + formattedOnlineSchool;
 
-		$("#education").append(HTMLschoolStart);
+				var formattedOnlineDates = HTMLonlineDates.replace("%data%",education.onlineCourses[oc].dates);
+				var formattedOnlineURL = HTMLonlineURL.replace("%data%",education.onlineCourses[oc].url);
 
-		var formattedOnlineTitle = HTMLonlineTitle.replace("%data%",education.onlineCourses[oc].title);
-		var formattedOnlineSchool = HTMLonlineSchool.replace("%data%",education.onlineCourses[oc].school);
-		var combineOnlineTitleschool = formattedOnlineTitle + formattedOnlineSchool;
+				$(".education-entry:last").append(combineOnlineTitleschool);
+				$(".education-entry:last").append(formattedOnlineDates);
+				$(".education-entry:last").append(formattedOnlineURL);
 
-		var formattedOnlineDates = HTMLonlineDates.replace("%data%",education.onlineCourses[oc].dates);
-		var formattedOnlineURL = HTMLonlineURL.replace("%data%",education.onlineCourses[oc].url);
-
-		$(".education-entry:last").append(combineOnlineTitleschool);
-		$(".education-entry:last").append(formattedOnlineDates);
-		$(".education-entry:last").append(formattedOnlineURL);
-
-	}
+			}
+	  }
 }
 
 education.display();
@@ -234,37 +238,6 @@ if(bio.skills.length > 0){
 
 /** write a for in loop that iterates over all jobs in the work obj **/
 /*	format each jobs employer	and job title													 */
-
-
-/** create a displayWork() function that displays my work */
-
-var displayWork = function(){
-	var formattedEmployer;
-	var formattedTitle;
-	var combineEmployerTitle;
-
-	for (job in work.jobs){
-
-		formattedEmployer = HTMLworkEmployer.replace("%data%",work.jobs[job].employer);
-		formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
-		formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].location);
-		formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].dates);
-		formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
-
-		combineEmployerTitle = formattedEmployer + formattedTitle;
-
-		$("#workExperience").append(HTMLworkStart);
-
-		$(".work-entry:last").append(combineEmployerTitle);
-		$(".work-entry:last").append(formattedDates);
-		$(".work-entry:last").append(formattedLocation);
-		$(".work-entry:last").append(formattedDescription);
-
-		console.log(work.jobs[job].employer, work.jobs[job].title);
-	}
-}
-
-displayWork();
 
 
 /** Lesson 2 internationalise the name */
