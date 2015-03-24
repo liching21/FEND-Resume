@@ -6,18 +6,18 @@
 
 
 var bio = {
-	"name" : "Liching Yew",
-	"role" : "Front End Web Developer",
-	"contacts" : {
-		"email" : "liching.yew@gmail.com",
-		"mobile" : "0430 488 705",
-		"github" : "https://github.com/liching21",
-		"location" : "Sydney, Australia"
+	"name": "Liching Yew",
+	"role": "Front End Web Developer",
+	"contacts": {
+		"email": "liching.yew@gmail.com",
+		"mobile": "0430 488 705",
+		"github": "https://github.com/liching21",
+		"location": "Sydney, Australia"
 	},
 
-	"pictureURL" : "images/melb-cup-me.jpg",
-	"welcomeMessage" : "Hello everyone, welcome to my portfolio page!",
-	"skills" : ["HTML" , "JS" , "CSS" , "Creating responsive webpages"]
+	"pictureURL": "images/melb-cup-me.jpg",
+	"welcomeMessage": "Hello everyone, welcome to my portfolio page!",
+	"skills": ["HTML" , "JS" , "CSS" , "Creating responsive webpages"]
 }
 
 var formattedName = HTMLheaderName.replace("%data%",bio.name);
@@ -61,18 +61,18 @@ $("#header").append(formattedWelcomeMessage);
 var work = {
 	"jobs" : [
 		{
-			"employer" : "SiteMinder",
-			"title" : "Service Desk Analyst",
-			"location" : "55 Harrington st, The Rocks, Sydney, 2000, Australia",
-			"dates" : "june 2014 - current",
-			"description" : "My role primarily involves in direct verbal and written communication with customers who require assistance with using Little Hotelier. Additionally I coordinate with the Level 2 Support team to resolve higher level enquiries and keep the customer informed of the progress. I ensure that cases are dealt with in a timely manner with efficiency and accuracy untimately providing a pleasant experience to our customers."
+			"employer": "SiteMinder",
+			"title": "Service Desk Analyst",
+			"location": "55 Harrington st, The Rocks, Sydney, 2000, Australia",
+			"dates": "june 2014 - current",
+			"description": "My role primarily involves in direct verbal and written communication with customers who require assistance with using Little Hotelier. Additionally I coordinate with the Level 2 Support team to resolve higher level enquiries and keep the customer informed of the progress. I ensure that cases are dealt with in a timely manner with efficiency and accuracy untimately providing a pleasant experience to our customers."
 		},
 		{
-			"employer" : "Sydney Eemralds Synchro Club",
-			"title" : "Coach",
-			"location" : "Cook and Phillip Aquatic and Fitness Centre",
-			"dates" : "2009 - 2014",
-			"description" : "My role involves coaching athletes in synchronised swimming by planning the sessions, instructing relevant skills, analysing their performances and providing feedback for improvement."
+			"employer": "Sydney Eemralds Synchro Club",
+			"title": "Coach",
+			"location": "Cook and Phillip Aquatic and Fitness Centre",
+			"dates": "2009 - 2014",
+			"description": "My role involves coaching athletes in synchronised swimming by planning the sessions, instructing relevant skills, analysing their performances and providing feedback for improvement."
 		}
 	]
 }
@@ -80,22 +80,22 @@ var work = {
 /** Creating the projects object **/
 
 var projects = {
-	"projects" : [
+	"projects": [
 		{
-			"title" : "Events of y22",
-			"dates" : "February 2015",
+			"title": "Events of y22",
+			"dates": "February 2015",
 			"description" : "Applying the front end web design and development techniques that I have leant so far to create and aesthetically pleasing webpage highlighting the events that happened when I was 22",
-			"images" : [
+			"images": [
 				"images/22img1.jpg",
 				"images/22img2.jpg",
 				"images/22img3.jpg"
 			]
 		},
 		{
-			"title" : "Sydney Emeralds Club Website",
-			"dates" : "February 2014 - January 2015",
+			"title": "Sydney Emeralds Club Website",
+			"dates": "February 2014 - January 2015",
 			"description" : "In an attempt to improve the current website, I have created an unofficial website for the Sydney Emeralds Synchro Club.",
-			"images" : [
+			"images": [
 				"images/SESCimg1.jpg",
 				"images/SESCimg2.jpg",
 				"images/SESCimg3.jpg",
@@ -132,40 +132,25 @@ projects.display = function(){
 /** calling display projects function */
 projects.display();
 
-/** Creating Education object with brackets notation **/
-/**
-	var education = {};
-
-	education["schoolName"] = "University of Sydney";
-	education["yearsAttended"]= "4 years";
-	education["schoolCity"] = "Sydney, Australia";
-*/
-
-/** Append Work position and Education name to the page **/
-/**
-	$("#header").append(work["position"]);
-	$("#header").append(education.schoolName);
-*/
-
 /** Created a new education object and verify it with JSON **/
 var education = {
-		"schools" : [
+		"schools": [
 			{
-			  "name" : "University of Sydney",
-			  "location" : "Sydney, Australia",
-			  "degree" : "Bachelor of Science",
-			  "majors" : ["Computer Science" , "Information Systems"],
-			  "dates" : "2009 - 2013",
-			  "url" : "http://sydney.edu.au/"
+			  "name": "University of Sydney",
+			  "location": "Sydney, Australia",
+			  "degree": "Bachelor of Science",
+			  "majors": ["Computer Science" , "Information Systems"],
+			  "dates": "2009 - 2013",
+			  "url": "http://sydney.edu.au/"
 			}
 	  ],
 
-	  "onlineCourses" : [
+	  "onlineCourses": [
 	  	{
-	  		"title" : "Front End Web Development",
-		  	"school" : "Udacity",
-		  	"dates" : "Feb 2015 - Ongoing",
-		  	"url" : "https://www.udacity.com/course/nd001"
+	  		"title": "Front End Web Development",
+		  	"school": "Udacity",
+		  	"dates": "Feb 2015 - Ongoing",
+		  	"url": "https://www.udacity.com/course/nd001"
 	  	}
 	  ]
 }
