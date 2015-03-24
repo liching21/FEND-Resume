@@ -20,32 +20,37 @@ var bio = {
 	"skills": ["HTML" , "JS" , "CSS" , "Creating responsive webpages"]
 }
 
-var formattedName = HTMLheaderName.replace("%data%",bio.name);
-var formattedRole = HTMLheaderRole.replace("%data%",bio.role);
-var formattedMobile = HTMLmobile.replace("%data%",bio.contacts.mobile);
-var formattedEmail = HTMLemail.replace("%data%",bio.contacts.email);
-var formattedGithub = HTMLgithub.replace("%data%",bio.contacts.github);
-var formattedLocation = HTMLlocation.replace("%data%",bio.contacts.location);
+/** add the display method for Bio */
+bio.display = function(){
 
-var formattedBioPic = HTMLbioPic.replace("%data%",bio.pictureURL);
-var formattedWelcomeMessage = HTMLwelcomeMsg.replace("%data%",bio.welcomeMessage);
+	var formattedName = HTMLheaderName.replace("%data%",bio.name);
+	var formattedRole = HTMLheaderRole.replace("%data%",bio.role);
+	var formattedMobile = HTMLmobile.replace("%data%",bio.contacts.mobile);
+	var formattedEmail = HTMLemail.replace("%data%",bio.contacts.email);
+	var formattedGithub = HTMLgithub.replace("%data%",bio.contacts.github);
+	var formattedLocation = HTMLlocation.replace("%data%",bio.contacts.location);
 
-$("#header").prepend(formattedRole);
-$("#header").prepend(formattedName);
-$("#topContacts").append(formattedEmail);
-$("#topContacts").append(formattedMobile);
-$("#topContacts").append(formattedGithub);
-$("#topContacts").append(formattedLocation);
+	var formattedBioPic = HTMLbioPic.replace("%data%",bio.pictureURL);
+	var formattedWelcomeMessage = HTMLwelcomeMsg.replace("%data%",bio.welcomeMessage);
 
-$("#footerContacts").append(formattedEmail);
-$("#footerContacts").append(formattedMobile);
-$("#footerContacts").append(formattedGithub);
-$("#footerContacts").append(formattedLocation);
+	$("#header").prepend(formattedRole);
+	$("#header").prepend(formattedName);
+	$("#topContacts").append(formattedEmail);
+	$("#topContacts").append(formattedMobile);
+	$("#topContacts").append(formattedGithub);
+	$("#topContacts").append(formattedLocation);
 
+	$("#footerContacts").append(formattedEmail);
+	$("#footerContacts").append(formattedMobile);
+	$("#footerContacts").append(formattedGithub);
+	$("#footerContacts").append(formattedLocation);
 
+	$("#header").append(formattedBioPic);
+	$("#header").append(formattedWelcomeMessage);
+}
 
-$("#header").append(formattedBioPic);
-$("#header").append(formattedWelcomeMessage);
+bio.display();
+
 
 /** Creating work object with dot notation **/
 /**
@@ -109,25 +114,25 @@ var projects = {
 
 projects.display = function(){
 
-		/** loop through each project and add info */
-		for (var project in projects.projects){
+	/** loop through each project and add info */
+	for (var project in projects.projects){
 
-			$("#projects").append(HTMLprojectStart);
+		$("#projects").append(HTMLprojectStart);
 
-			var formattedProjectTitle = HTMLprojectTitle.replace("%data%",projects.projects[project].title);
-			var formattedProjectDates = HTMLprojectDates.replace("%data%",projects.projects[project].dates);
-			var formattedProjectDescription = HTMLprojectDescription.replace("%data%",projects.projects[project].description);
+		var formattedProjectTitle = HTMLprojectTitle.replace("%data%",projects.projects[project].title);
+		var formattedProjectDates = HTMLprojectDates.replace("%data%",projects.projects[project].dates);
+		var formattedProjectDescription = HTMLprojectDescription.replace("%data%",projects.projects[project].description);
 
-			$(".project-entry:last").append(formattedProjectTitle);
-			$(".project-entry:last").append(formattedProjectDates);
-			$(".project-entry:last").append(formattedProjectDescription);
+		$(".project-entry:last").append(formattedProjectTitle);
+		$(".project-entry:last").append(formattedProjectDates);
+		$(".project-entry:last").append(formattedProjectDescription);
 
-			for (var img in projects.projects[project].images){
-				var formattedProjectImage = HTMLprojectImage.replace("%data%",projects.projects[project].images[img]);
-				$(".project-entry:last").append(formattedProjectImage);
-			}
+		for (var img in projects.projects[project].images){
+			var formattedProjectImage = HTMLprojectImage.replace("%data%",projects.projects[project].images[img]);
+			$(".project-entry:last").append(formattedProjectImage);
 		}
 	}
+}
 
 /** calling display projects function */
 projects.display();
