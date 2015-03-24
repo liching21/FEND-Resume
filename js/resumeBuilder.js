@@ -4,7 +4,9 @@
 	* Author: Liching Yew
 	*/
 
-
+/**
+ * Represents an Bio object.
+ */
 var bio = {
 	"name": "Liching Yew",
 	"role": "Front End Web Developer",
@@ -48,7 +50,9 @@ var bio = {
 
 bio.display();
 
-/** Updating the work object **/
+/**
+ * Represents a Work object.
+ */
 var work = {
 	"jobs" : [
 		{
@@ -93,8 +97,9 @@ var work = {
 
 work.display();
 
-/** Creating the projects object **/
-
+/**
+ * Represents a Project object.
+ */
 var projects = {
 	"projects": [
 		{
@@ -144,7 +149,9 @@ var projects = {
 /** calling display projects function */
 projects.display();
 
-/** Created a new education object and verify it with JSON **/
+/**
+ * Represents an Education object.
+ */
 var education = {
 		"schools": [
 			{
