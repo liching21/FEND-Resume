@@ -16,7 +16,7 @@ var bio = {
 
 	"pictureURL" : "images/melb-cup-me.jpg",
 	"welcomeMessage" : "Hello everyone, welcome to my portfolio page!",
-	"skills" : ["HTML" , " JS" , " CSS" , " Responsive"]
+	"skills" : ["HTML" , "JS" , "CSS" , "Creating responsive webpages"]
 }
 
 var formattedName = HTMLheaderName.replace("%data%",bio.name);
@@ -62,14 +62,14 @@ var work = {
 		{
 			"employer" : "SiteMinder",
 			"title" : "Service Desk Analyst",
-			"location" : "Sydney, Australia",
+			"location" : "55 Harrington st, The Rocks, Sydney, 2000, Australia",
 			"dates" : "june 2014 - current",
 			"description" : "My role primarily involves in direct verbal and written communication with customers who require assistance with using Little Hotelier. Additionally I coordinate with the Level 2 Support team to resolve higher level enquiries and keep the customer informed of the progress. I ensure that cases are dealt with in a timely manner with efficiency and accuracy untimately providing a pleasant experience to our customers."
 		},
 		{
 			"employer" : "Sydney Eemralds Synchro Club",
 			"title" : "Coach",
-			"location" : "Sydney, Australia",
+			"location" : "Cook and Phillip Aquatic and Fitness Centre",
 			"dates" : "2009 - 2014",
 			"description" : "My role involves coaching athletes in synchronised swimming by planning the sessions, instructing relevant skills, analysing their performances and providing feedback for improvement."
 		}

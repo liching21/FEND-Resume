@@ -239,10 +239,6 @@ span {
 }
 
 #projects{
-  background-image: url("../images/sunset.jpeg");
-  background-size: 100%;
-}
-
-#projects p{
-    color: #ccc;
+  background-image: url("../images/gplaypattern.png");
+  /**background-size: 100%;*/
 }
