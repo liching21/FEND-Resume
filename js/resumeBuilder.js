@@ -1,8 +1,9 @@
-/** 										**/
-/*	File: ResumeBuilder.js 					 */
-/*	Based on: JavaScript Basics from Udacity */
-/*	Written by: Liching Yew					 */
-/**											**/
+/**
+	* File: ResumeBuilder.js
+	* Based on: JavaScript Basics from Udacity
+	* Author: Liching Yew
+	*/
+
 
 var bio = {
 	"name" : "Liching Yew",
