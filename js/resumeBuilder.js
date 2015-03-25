@@ -45,10 +45,31 @@ var bio = {
 
 		$("#header").append(formattedBioPic);
 		$("#header").append(formattedWelcomeMessage);
+	},
+	displaySkills: function(){
+		/** write an if statement to check if there are skills in the bio object **/
+
+		if(bio.skills.length > 0){
+			/** skills **/
+			$("#header").append(HTMLskillsStart);
+
+			var formattedSkills = HTMLskills.replace("%data%", bio.skills[0]);
+			$("#skills").append(formattedSkills);
+
+			var formattedSkills = HTMLskills.replace("%data%", bio.skills[1]);
+			$("#skills").append(formattedSkills);
+
+			var formattedSkills = HTMLskills.replace("%data%", bio.skills[2]);
+			$("#skills").append(formattedSkills);
+
+			var formattedSkills = HTMLskills.replace("%data%", bio.skills[3]);
+			$("#skills").append(formattedSkills);
+		}
 	}
 }
 
 bio.display();
+bio.displaySkills();
 
 /**
  * Represents a Work object.
@@ -224,26 +245,7 @@ var education = {
 
 education.display();
 
-/** write an if statement to check if there are skills in the bio object **/
-
-if(bio.skills.length > 0){
-	/** skills **/
-	$("#header").append(HTMLskillsStart);
-
-	var formattedSkills = HTMLskills.replace("%data%", bio.skills[0]);
-	$("#skills").append(formattedSkills);
-
-	var formattedSkills = HTMLskills.replace("%data%", bio.skills[1]);
-	$("#skills").append(formattedSkills);
-
-	var formattedSkills = HTMLskills.replace("%data%", bio.skills[2]);
-	$("#skills").append(formattedSkills);
-
-	var formattedSkills = HTMLskills.replace("%data%", bio.skills[3]);
-	$("#skills").append(formattedSkills);
-}
-
-/** Lesson 2 internationalise the name */
+/**	Lesson 2 internationalise the name
 $("#main").append(internationalizeButton);
 
 function inName(name) {
@@ -252,7 +254,7 @@ function inName(name) {
 	names[0] = names[0].slice(0,1).toUpperCase() + names[0].slice(1).toLowerCase();
 	var joinName = names.join(" ");
 	return joinName;
-}
+}*/
 
 /** show google map */
 $("#mapDiv").append(googleMap);
