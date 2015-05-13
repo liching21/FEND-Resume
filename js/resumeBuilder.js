@@ -126,6 +126,7 @@ var projects = {
 		{
 			"title": "Events of y22",
 			"dates": "February 2015",
+			"url": "http://liching21.github.io/22/",
 			"description" : "Applying the front end web design and development techniques that I have leant so far to create and aesthetically pleasing webpage highlighting the events that happened when I was 22",
 			"images": [
 				"images/22img1.jpg",
@@ -136,6 +137,7 @@ var projects = {
 		{
 			"title": "Sydney Emeralds Club Website",
 			"dates": "February 2014 - January 2015",
+			"url": "http://liching21.github.io/Emeralds/",
 			"description" : "In an attempt to improve the current website, I have created an unofficial website for the Sydney Emeralds Synchro Club.",
 			"images": [
 				"images/SESCimg1.jpg",
@@ -147,6 +149,7 @@ var projects = {
 		{
 			"title": "Udacity Front End Web Development - Project 3 (Frogger)",
 			"dates": "March 2015",
+			"url": "http://liching21.github.io/frontend-nanodegree-arcade-game-master/",
 			"description" : "The aim of the game is to move the selected hero from the bottom to the top of the screen with colliding with the bugs. This project had been created primarily with Object Oriented Javascript and the HTML Canvas",
 			"images": [
 				"images/frogger-3a.jpg",
@@ -163,10 +166,12 @@ var projects = {
 
 			var formattedProjectTitle = HTMLprojectTitle.replace("%data%",projects.projects[project].title);
 			var formattedProjectDates = HTMLprojectDates.replace("%data%",projects.projects[project].dates);
+			var formattedProjectURL = HTMLprojectURL.replace("%data%",projects.projects[project].url);
 			var formattedProjectDescription = HTMLprojectDescription.replace("%data%",projects.projects[project].description);
 
 			$(".project-entry:last").append(formattedProjectTitle);
 			$(".project-entry:last").append(formattedProjectDates);
+			$(".project-entry:last").append(formattedProjectURL);
 			$(".project-entry:last").append(formattedProjectDescription);
 
 			for (var img in projects.projects[project].images){
