@@ -143,6 +143,16 @@ var projects = {
 				"images/SESCimg3.jpg",
 				"images/SESCimg4.jpg"
 			]
+		},
+		{
+			"title": "Udacity Front End Web Development - Project 3 (Frogger)",
+			"dates": "March 2015",
+			"description" : "The aim of the game is to move the selected hero from the bottom to the top of the screen with colliding with the bugs. This project had been created primarily with Object Oriented Javascript and the HTML Canvas",
+			"images": [
+				"images/frogger-3a.jpg",
+				"images/frogger-4a.jpg",
+				"images/frogger-5a.jpg"
+			]
 		}
 	],
 	display: function(){
