@@ -16,13 +16,9 @@ module.exports = function(grunt) {
         },
 
         cssmin: {
-          options: {
-            shorthandCompacting: false,
-            roundingPrecision: -1
-          },
           target: {
             files: {
-              'css/build/style.min.css': 'css/style.css'
+              'css/style.min.css': 'css/style.css'
             }
           }
         }
