@@ -21,6 +21,18 @@ module.exports = function(grunt) {
               'css/style.min.css': 'css/style.css'
             }
           }
+        },
+
+        htmlmin: {                                     // Task
+          dist: {                                      // Target
+            options: {                                 // Target options
+              removeComments: true,
+              collapseWhitespace: true
+            },
+            files: {                                   // Dictionary of files
+             'index.html': 'src/index.html',     // 'destination': 'source'
+            }
+          }
         }
 
     });
@@ -28,8 +40,9 @@ module.exports = function(grunt) {
     // 3. Where we tell Grunt we plan to use this plug-in.
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-contrib-htmlmin');
 
     // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
-    grunt.registerTask('default', ['uglify','cssmin']);
+    grunt.registerTask('default', ['uglify','cssmin','htmlmin']);
 
 };
